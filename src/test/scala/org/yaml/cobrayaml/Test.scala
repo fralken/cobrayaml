@@ -1,16 +1,13 @@
 package org.yaml.cobrayaml
 
 import org.scalatest.FlatSpec
-import org.yaml.snakeyaml.Yaml
 
 class Test extends FlatSpec {
 
   "yamls" should "load a Set" in {
     val yamlset = "!!set {a: null, b: null}"
     val yamls = Yamls()
-    val yaml = new Yaml()
     yamls.load(yamlset) === Set("a", "b")
-    println(yaml.load(yamlset).getClass)
   }
 
   it should "load a Seq" in {
